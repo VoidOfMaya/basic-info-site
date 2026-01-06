@@ -31,7 +31,7 @@ const server = http.createServer((req, res)=>{
             res.statusCode= 404
             break;
     }
-    //
+    //reading incomming data and pushing out a response
     fs.readFile(path, (err, data)=>{
         err ? console.log(err) : res.end(data);
     })
