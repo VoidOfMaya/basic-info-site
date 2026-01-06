@@ -1,0 +1,19 @@
+{
+  "name": "basic-info-site",
+  "version": "1.0.0",
+  "description": "this is the first  backend project within the odin projects node.js course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VoidOfMaya/basic-info-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VoidOfMaya/basic-info-site/issues"
+  },
+  "homepage": "https://github.com/VoidOfMaya/basic-info-site#readme"
+}
