@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/VoidOfMaya/basic-info-site/issues"
   },
-  "homepage": "https://github.com/VoidOfMaya/basic-info-site#readme"
+  "homepage": "https://github.com/VoidOfMaya/basic-info-site#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }

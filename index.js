@@ -1,7 +1,9 @@
-import http from 'http'
-import fs from "fs"
-
+const http = require('http')
+const fs = require("fs")
+const express = require('express');
+// node.js server
 // lauching server
+/*
 const server = http.createServer((req, res)=>{
     //declaring res content type
     res.setHeader('Content-Type', 'text/html');
@@ -40,3 +42,32 @@ const server = http.createServer((req, res)=>{
 server.listen(8080, 'localhost',()=>{
     console.log('server running...');
 });
+*/
+//express server
+
+const app = express();
+
+const PORT = 8080
+
+
+app.listen(PORT, (err)=>{
+    if(err){
+        throw err;
+    }
+});
+
+
+
+//express routing
+app.get('/',(req, res)=>{
+    res.sendFile('./pages/index.html',{root: __dirname})
+})
+app.get('/about',(req, res)=>{
+    res.sendFile('./pages/about.html',{root: __dirname})
+})
+app.get('/contact-me',(req, res)=>{
+    res.sendFile('./pages/contact-me.html',{root: __dirname})
+})
+app.use((req, res)=>{
+    res.sendFile('./pages/404.html',{root: __dirname})
+})
