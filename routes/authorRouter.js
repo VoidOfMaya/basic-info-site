@@ -1,11 +1,8 @@
 const {Router}= require('express');
+const {getAuthById} = require('../controllers/authController.js');
 
 const authRouter =Router();
-
 authRouter.get('/',(req,res)=> res.send('All authors'));
-authRouter.get('/:authorId', (req, res) =>{
-    const{authorId} = req.params;
-    res.send(`Author ID: ${authorId}`);
-})
+authRouter.get('/:authorId', getAuthById);
 
 module.exports = authRouter;
