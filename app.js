@@ -16,6 +16,13 @@ const app = express();
 app.use('/authors', authRouter);
 app.use('/books', bookRouter);
 app.use('/', indexRouter);
+//seting up error handeling middleware
+//  note: for express torecognize this as error handler middleware
+//        ALL 4 parameters should be present even if not used!
+app.use((err, req, res, next)=>{
+    console.log.error(err);
+    res.status(err.statusCode || 500).send(err);
+});
 
 // set up request listening
 
