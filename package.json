@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/VoidOfMaya/basic-info-site#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.2.1"
   }
 }
