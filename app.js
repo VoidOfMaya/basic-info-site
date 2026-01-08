@@ -13,9 +13,31 @@ const app = express();
 
 //set up routing middleware
 
-app.use('/authors', authRouter);
-app.use('/books', bookRouter);
-app.use('/', indexRouter);
+//app.use('/authors', authRouter);
+//app.use('/books', bookRouter);
+//app.use('/', indexRouter);
+
+function middleware1(req, res, next) {
+  console.log("Middleware 1");
+  //next();  Pass control to the next middleware
+};
+console.log('im still standing! yeah yeah yeah!')
+
+function middleware2(req, res, next) {
+  console.log("Middleware 2");
+  res.send("Response from Middleware 2");
+  // request-response cycle ends here
+};
+
+function middleware3(req, res, next) {
+  console.log("Middleware 3");
+  res.send("Response from Middleware 3");
+};
+
+app.use(middleware1);
+app.use(middleware2);
+app.use(middleware3)
+
 //seting up error handeling middleware
 //  note: for express torecognize this as error handler middleware
 //        ALL 4 parameters should be present even if not used!
